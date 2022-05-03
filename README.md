@@ -17,7 +17,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 
 --------------------------------------------------------------------------------------------------------------
 
-## Introdução - Desenvolvimento Web :white_check_mark:
+## Introdução - Desenvolvimento Web :hourglass_flowing_sand:
 
 ##### Bloco 1: Introdução - Unix & Shell
 
@@ -57,7 +57,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online e aborda 
 - [ ] 5-4: 
 - [ ] 5-5: 
 
-## Desenvolvimento Front-end :white_check_mark:
+## Desenvolvimento Front-end :hourglass_flowing_sand:
 
 ##### Bloco 6: Introdução - Front-end
 
