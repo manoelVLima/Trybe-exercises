@@ -9,7 +9,7 @@ The main technical stacks studied are JavaScript, HTML, CSS, React, Node, Expres
 --------------------------------------------------------------------------------------------------------------
 
 
-Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Manoel Vieira Lima Junior]()https://www.linkedin.com/in/manoel-vieira-lima-junior-589838127/_enquanto aluno na [Trybe](https://www.betrybe.com/) :rocket:
+Este repositório contém todas as atividades de aprendizagem desenvolvidas por _[Manoel Vieira Lima Junior](https://www.linkedin.com/in/manoel-vieira-lima-junior-589838127/)_enquanto aluno na [Trybe](https://www.betrybe.com/) :rocket:
 
 _"A Trybe é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde a pessoa só paga quando conseguir um bom trabalho."_
 
