@@ -1,0 +1,136 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte2: 'Passion One', cursive;
+    --fonte3: 'Sriracha', cursive;
+}
+/*
+CABEÇALHO
+*/
+.header{
+    font-family: var(--fonte1);
+    background-color: black;
+    color: white;
+    height: 100px;
+    font-variant: small-caps;
+    
+}
+.header-titulo{
+    text-align: center;
+    padding-top: 15px;
+}
+.header-list{
+    text-align: center;
+}
+.header-list-itens{
+    display: inline-block;
+    margin: 20px;
+}
+.header-list-itens a{
+    text-decoration: none;
+    color: white;
+}
+.header-list-itens a:hover{
+    text-decoration: underline;
+}
+/*
+CONTEUDO PRINCIPAL
+*/
+.article-section1-conteudo{
+    margin: auto;
+    border: 1px solid black;
+    width: 800px;
+    height: 450px;
+    margin-top: 20px;
+    padding: 20px;
+    line-height: 25px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+}
+.article-section1-conteudo p{
+    margin-top: 10px;
+    text-align: justify;
+}
+.article-section1-conteudo-img{
+    
+    display: block;
+    width: 300px;
+    margin: auto;
+    border-radius: 10px;
+}
+.article-section2-conteudo{
+    width: 800px;
+    height: 450px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 5px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    line-height: 25px;
+    padding: 20px;
+    text-align: justify;
+}
+.article-section2-conteudo h3{
+    margin: 10px;
+    
+}
+.aside{
+    border: 1px solid black;
+    width: 800px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px;
+    
+    
+}
+.aside-conteudo-1{
+    display: inline-block;
+
+}
+
+.aside-conteudo-1 li{
+    list-style: none;
+    margin: 10px;
+    
+}
+.aside-conteudo-1 a{
+    text-decoration: none;
+    color: black;
+}
+.aside-conteudo-1 a:hover{
+    text-decoration: underline;
+}
+.aside-conteudo-2{
+    display: inline-block;
+    position:relative;
+    bottom: 8px;
+    left: 450px;
+    text-align: center;
+}
+
+.aside-conteudo-2 p img{
+    margin-top: 5px;
+    width: 50px;  
+}
+.rodape-2{
+    margin-top: 20px;
+    text-align: center;
+}
+.rodape-2 a{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+}
+
+
+
