@@ -34,15 +34,15 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]; // lenght 10
 
 //5: 🚀 Utilizando for, descubra qual o maior valor contido no array e imprima-o;
 
-// let maiorValor;
+// let maiorValor=0;
 
 // for(let i=0; i<numbers.length; i+=1){
-//     maiorValor = numbers[i];
-//     if(number[i+1]> maiorValor){
-//         maiorValor = numbers[i+1]
-//         console.log(maiorValor);
+//     if(numbers[i] > maiorValor){
+//         maiorValor = numbers[i];
+        
 //     }
 // }
+// console.log(maiorValor);
 
 //6:Descubra quantos valores ímpares existem no array e imprima o resultado. Caso não exista nenhum, imprima a mensagem: "nenhum valor ímpar encontrado";
 // let contador= 0;
@@ -59,6 +59,18 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]; // lenght 10
 
 //7: Utilizando for, descubra qual o menor valor contido no array e imprima-o;
 
+let menorValor = numbers[0];
+
+for(let i=0; i<numbers.length; i+=1){
+        
+    if(numbers[i] < menorValor){
+        
+        menorValor = numbers[i];
+        
+    }
+}
+console.log(menorValor);
+
 //8: Utilizando for, crie um array que vá de 1 até 25 e imprima o resultado;
 
 // let numeros = [];
@@ -69,8 +81,12 @@ let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27]; // lenght 10
 // console.log(numeros);
 
 //9: Utilizando o array criado no exercício anterior imprima o resultado da divisão de cada um dos elementos por 2
-let numeros = [];
+// let numeros = [];
 
-for(let index =1; index <= 25; index+=1){
-    numeros.push(index) // lembrar que o push acrescenta um valor na ultima posição do array
-}
+// for(let index =1; index <= 25; index+=1){
+//     numeros.push(index) // lembrar que o push acrescenta um valor na ultima posição do array
+    
+// }
+// for(let i=0; i<numeros.length;i+=1){
+//     console.log(numeros[i]/2)
+// }
