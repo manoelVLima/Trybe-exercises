@@ -2,18 +2,19 @@
 
 
 // NUMERO PRIMO
-let primo;
+let primo = Boolean;
 let maiorNumero =0;
 for(num = 0; num <= 50; num+=1){
     for(let  divisor = 2; divisor < num; divisor +=1){
         if(num % divisor === 0 ){
             primo = false;   
-    }else{
-        primo = true;
+    } else{
+        primo = true
     }
-    if(primo === true ){
-        maiorNumero = num;
-    }
+    
+}
+if(primo === true){
+    maiorNumero = num;
 }
 
 }
