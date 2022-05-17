@@ -2,24 +2,22 @@
 
 
 // NUMERO PRIMO
-let primo = Boolean;
-let maiorNumero =0;
-for(num = 0; num <= 50; num+=1){
-    for(let  divisor = 2; divisor < num; divisor +=1){
-        if(num % divisor === 0 ){
-            primo = false;   
-    } else{
-        primo = true
-    }
-    
-}
-if(primo === true){
-    maiorNumero = num;
-}
 
+let maiorNumero =0;
+
+for(divisor = 0; divisor<= 50; divisor+=1){
+    let primo = true;
+    for(dividendo = 2; dividendo < divisor; dividendo+=1){
+        if(divisor%dividendo == 0){
+            primo = false;
+        }
+    }
+    if(primo){
+        maiorNumero = divisor;
+        
+    }
 }
 console.log(maiorNumero);
-
 
 
 
