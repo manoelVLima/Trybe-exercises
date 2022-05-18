@@ -30,11 +30,17 @@
 //     console.log(`Olá ${index}`);
 //   }
 
-let car = {
-    model: 'A3 Sedan',
-    manufacturer: 'Audi',
-    year: 2020
-  };
-  for (let index in car){
-    console.log(index,car[index])
+// let car = {
+//     model: 'A3 Sedan',
+//     manufacturer: 'Audi',
+//     year: 2020
+//   };
+//   for (let index in car){
+//     console.log(index,","+car[index])
+//   }
+
+  let animais =['macaco','leao','papagaio'];
+
+  for(let i in animais){
+    console.log(i)
   }
