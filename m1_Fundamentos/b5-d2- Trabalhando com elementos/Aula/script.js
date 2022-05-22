@@ -29,6 +29,12 @@
       }
     }
 
+    let quartoEUltimoFilho = document.querySelector('#quartoEUltimoFilho');
+    quartoEUltimoFilho.remove();
+
+    let elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta').children;
+    elementoOndeVoceEsta[1].remove();
+
 
 // parentNode: retorna o nó pai.
 // parentElement: retorna o elemento pai.
