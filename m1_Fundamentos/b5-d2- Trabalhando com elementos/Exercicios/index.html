@@ -126,10 +126,12 @@
       const CenterContent = document.getElementsByClassName('center-content')[0];
       CenterContent.parentNode.style.backgroundColor = 'green';
       // 6 - Remova os dois últimos elementos (nove e dez) da lista criada no passo 8.
-        const itemsLista = document.getElementsByTagName('li');
-      for (let index = 0; index < itemsLista.length; index +=1){
-        if(itemsLista[index].contains("9")){
-          itemsLista[index].remove();
+        const itemsLista = document.getElementsByTagName('ul')[0];
+      for (let index = 0; index < itemsLista.children.length; index +=1){
+        if(itemsLista.children[index].innerHTML == 2) {
+          itemsLista.children[index].remove();
+        } else if(itemsLista.children[index].innerHTML == 4){
+          itemsLista.children[index].remove();
         }
       }
         // lista.lastElementChild.remove();
