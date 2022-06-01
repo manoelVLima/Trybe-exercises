@@ -5,13 +5,13 @@ const textArea = document.querySelector("#textarea");
 const agreeTwoCheckBox = document.querySelector("#agreeTwo");
 
 window.onload = function () {
-//   clearButton.addEventListener("click", () => {
-//     for (let i = 0; i < getInputs.length; i += 1) {
-//       getInputs[i].innerHTML = "";
-//       getInputs[i].checked = false;
-//     }
-//     textArea.innerHTML = "";
-//   });
+  clearButton.addEventListener("click", () => {
+    for (let i = 0; i < getInputs.length; i += 1) {
+      getInputs[i].innerHTML = "";
+      getInputs[i].checked = false;
+    }
+    textArea.innerHTML = "";
+  });
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
   });
