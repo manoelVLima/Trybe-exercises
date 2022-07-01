@@ -99,10 +99,6 @@ const estudantes = [
 //       return `${e.nome} ${e.sobrenome}`
 //     }) 
 // }
-const getStudentsGrades = (student,list) =>  list.find((est) => (est.nome === student)).materias
+const getStudentsGrades = (student,list) =>  list.find((est) => (est.nome === student)).materias.map((materia) => (materia.nota > 60) ? `${materia.name} -> Aprovado`: `${materia.name} -> Reprovado`)
   
-
-    
-
-
-console.log(getStudentsGrades('Wilson', estudantes));
+console.log(getStudentsGrades('Natalia', estudantes));
