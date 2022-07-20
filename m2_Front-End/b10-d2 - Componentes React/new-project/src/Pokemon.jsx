@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css'
-
+import PropTypes from 'prop-types';
 // const {id, name, type, averageWeight} = pokemon
 
 class Pokemons extends React.Component {
@@ -20,5 +20,16 @@ class Pokemons extends React.Component {
             </section>
         )
     }
+}
+Pokemons.propTypes = {
+    pokemon: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        type: PropTypes.string.isRequired,
+        averageWeight: PropTypes.shape({
+            value: PropTypes.number.isRequired,
+            measurementUnit: PropTypes.string.isRequired
+        }).isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired
 }
 export default Pokemons;
