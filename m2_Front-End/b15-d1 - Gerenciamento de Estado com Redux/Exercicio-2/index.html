@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Trybe</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.js"></script>
+    <style>
+      body {
+        color: white;
+        background-color: #333;
+        font-family: sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Minha Aplicação</h1>
+      <p>Status: Você está <span id="status">Offline</span></p>
+      <button id="toggle-theme">Light Mode</button>
+      <button id="toggle-status">Ficar Online</button>
+    </div>
+    <script>
+      const THEME_INITIAL_STATE = {
+        theme: 'dark',
+      };
+
+      const themeReducer = (state = THEME_INITIAL_STATE, action) => {
+        switch (action.type) {
+          case "TOGGLE_THEME": return ({
+            ...state, theme: state.theme === 'dark' ? 'light': 'dark'
+          })
+          default:
+            return state;
+        }
+      };
+
+      const STATUS_INITIAL_STATE = {
+        status: 'offline',
+      };
+
+      const statusReducer = (state = STATUS_INITIAL_STATE, action) => {
+        switch (action.type) {
+          case "TOGGLE_STATUS": return ({
+            ...state, status: state.status === 'offline' ? 'online' : 'offline'
+          })
+          default:
+            return state;
+        }
+      };
+      const rootReducer = Redux.combineReducers({themeReducer, statusReducer});
+
+      const store = Redux.createStore(rootReducer);
+
+
+      const themeButton = document.getElementById('toggle-theme');
+      const statusButton = document.getElementById('toggle-status');
+
+      themeButton.addEventListener('click', () => {
+        store.dispatch({type: "TOGGLE_THEME"})
+      });
+      statusButton.addEventListener('click', () => {
+        store.dispatch({type: "TOGGLE_STATUS"})
+      });
+
+      store.subscribe(() => {
+        const { theme } = store.getState().themeReducer;
+        const { status } = store.getState().statusReducer;
+
+        const container = document.querySelector('body');
+        const themeText = document.getElementById('toggle-theme');
+        const statusText = document.getElementById('status');
+        const buttonStatus = document.getElementById('toggle-status')
+
+        const text = theme === 'light' ? 'Dark Mode' : 'Light Mode';
+        const textColor = theme === 'light' ? 'black' : 'white';
+        const background = theme === 'light' ? 'white' : 'black';
+        
+        const changeStatus = status === 'online' ? 'online' : 'offline';
+        const paragraphText = status === 'online'? 'Ficar offline' : 'Ficar online'
+
+        themeText.innerHTML = text;
+        statusText.innerHTML = changeStatus;
+        buttonStatus.innerHTML = paragraphText;
+        container.style.background = background;
+        container.style.color = textColor;
+        
+      })
+    </script>
+  </body>
+</html>
