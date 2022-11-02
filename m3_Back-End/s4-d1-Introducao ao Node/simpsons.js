@@ -79,7 +79,7 @@ const readline = require('readline-sync');
     const filter = data.filter((char) => char.name !== removeName)
     const ifExists = filter.some((char) => char.name === adcName);
     const filterId = data.filter((char) => char.name === removeName);
-    
+
     if(ifExists) throw new Error('Personagem já existe');
 
     filter.push({
@@ -90,4 +90,4 @@ const readline = require('readline-sync');
     const readline = await fs.writeFile('./simpsonFamily.json', JSON.stringify(filter))
     return readline;
   }
-  changeSimpsons('Maggie Simpson','Nelson Muntz').then((result) => console.log(result));
+  changeSimpsons('Maggie Simpson','Nelson Muntz').then((result) => console.log(result))
