@@ -1,76 +1,76 @@
 const fs = require('fs').promises;
 const readline = require('readline-sync');
 
-// async function characters() {
-//   try {
-//     const response = await fs.readFile('./simpsons.json');
-//     const data = await JSON.parse(response);
+async function characters() {
+  try {
+    const response = await fs.readFile('./simpsons.json');
+    const data = await JSON.parse(response);
     
-//     data.forEach((char) => console.log(`id do personagem: ${char.id}, nome do personagem: ${char.name}`))
+    data.forEach((char) => console.log(`id do personagem: ${char.id}, nome do personagem: ${char.name}`))
   
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-// async function characterId(id) {
-//   const response = await fs.readFile('./simpsons.json');
-//   const data = await JSON.parse(response);
-//   const char = new Promise((resolve, reject) => {
-//     const checkIfIdExists = data.find((char) => char.id === id)
+async function characterId(id) {
+  const response = await fs.readFile('./simpsons.json');
+  const data = await JSON.parse(response);
+  const char = new Promise((resolve, reject) => {
+    const checkIfIdExists = data.find((char) => char.id === id)
 
-//     if(!checkIfIdExists) reject(new Error('id não encontrado'))
+    if(!checkIfIdExists) reject(new Error('id não encontrado'))
 
-//     resolve(checkIfIdExists)
-//   })
-//   return char;
-// }
+    resolve(checkIfIdExists)
+  })
+  return char;
+}
 
-// characterId('5')
-//   .then((result) => console.log(result))
-//     .catch((error) => console.log(error.message));
+characterId('5')
+  .then((result) => console.log(result))
+    .catch((error) => console.log(error.message));
 
-// async function changeCharacterById(id1,id2) {
-//   const response = await fs.readFile('./simpsons.json');
-//   const data = await JSON.parse(response);
+async function changeCharacterById(id1,id2) {
+  const response = await fs.readFile('./simpsons.json');
+  const data = await JSON.parse(response);
   
-//   const filter = data.filter((char) => char.id !== id1 && char.id !== id2)
+  const filter = data.filter((char) => char.id !== id1 && char.id !== id2)
 
-//   return filter;
-// }
-// changeCharacterById('10','6')
-//   .then((result) => console.log(result));
+  return filter;
+}
+changeCharacterById('10','6')
+  .then((result) => console.log(result));
 
 
-  // async function newSimpsonsFamily() {
-  //   const response = await fs.readFile('./simpsons.json');
-  //   const data = await JSON.parse(response);
+  async function newSimpsonsFamily() {
+    const response = await fs.readFile('./simpsons.json');
+    const data = await JSON.parse(response);
     
-  //   const filter = data.filter((char) => Number(char.id) <= 4);
+    const filter = data.filter((char) => Number(char.id) <= 4);
 
 
-  //   const newFamily = await fs.writeFile('./simpsonFamily.json', JSON.stringify(filter));
+    const newFamily = await fs.writeFile('./simpsonFamily.json', JSON.stringify(filter));
 
-  //   return newFamily;
-  // }
-  // newSimpsonsFamily().then((result) => console.log(result));
+    return newFamily;
+  }
+  newSimpsonsFamily().then((result) => console.log(result));
 
-  // async function addNewSimpson() {
-  //   const response = await fs.readFile('./simpsonFamily.json');
-  //   const data = await JSON.parse(response);
-  //   console.log(data);
+  async function addNewSimpson() {
+    const response = await fs.readFile('./simpsonFamily.json');
+    const data = await JSON.parse(response);
+    console.log(data);
     
-  //   const id = readline.question('Qual o id do personagem?');
-  //   const name = readline.question('Qual o nome do personagem?');
+    const id = readline.question('Qual o id do personagem?');
+    const name = readline.question('Qual o nome do personagem?');
 
-  //   const newSimpsons = fs.writeFile('./simpsonFamily.json',JSON.stringify([...data,{
-  //     id,
-  //     name
-  //   }]))
+    const newSimpsons = fs.writeFile('./simpsonFamily.json',JSON.stringify([...data,{
+      id,
+      name
+    }]))
 
-  //   return newSimpsons;
-  // }
-  // addNewSimpson().then((result) => console.log(result));
+    return newSimpsons;
+  }
+  addNewSimpson().then((result) => console.log(result));
 
   async function changeSimpsons(adcName,removeName) {
     const response = await fs.readFile('./simpsonFamily.json');
