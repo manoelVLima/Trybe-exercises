@@ -1,4 +1,5 @@
 const express = require('express');
+const { read } = require('fs');
 const fs = require('fs').promises;
 const path = require('path');
 const { readMoviesFile, getMovieById } = require('./moviesFunctions');
@@ -6,6 +7,20 @@ const { readMoviesFile, getMovieById } = require('./moviesFunctions');
 const app = express();
 
 app.use(express.json());
+
+app.get('/movies/search', async (req,res) => {
+  try {
+    const { q } = req.query;
+    const movies = await readMoviesFile();
+
+    if(q) {
+      const filteredMovies = movies.filter((movie) => movie.movie.includes(q)) 
+      return res.status(200).json({filteredMovies});
+    }
+  } catch (error) {
+    res.status(500).send(({message: error.message}))
+  }
+})
 
 app.get('/movies', async (req,res) => {
   const movies = await readMoviesFile();
@@ -71,7 +86,4 @@ app.delete('/movies/:id', async (req, res) => {
   return res.status(200).json(removeMovie);
 })
 
-app.get('/movies/search', async (req,res) => {
-  const { q } = req.query;
-})
 module.exports = app;

@@ -26,7 +26,6 @@ async function getMovieById(id) {
     console.log('Filtro não encontrado',error);
   }
 }
-getMovieById(2)
 module.exports = {
   readMoviesFile,
   getMovieById

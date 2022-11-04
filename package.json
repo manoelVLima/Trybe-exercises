@@ -19,5 +19,8 @@
   "homepage": "https://github.com/manoelVLima/Trybe-exercises#readme",
   "devDependencies": {
     "jest": "^28.1.2"
+  },
+  "dependencies": {
+    "express": "4.17"
   }
 }
