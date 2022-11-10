@@ -8,6 +8,27 @@ const app = express();
 
 app.use(express.json());
 
+app.put('/movies/:id', async (req,res) => {
+  const { id } = req.params;
+  const { movie, price } = req.body;
+  console.log(req.body);
+  const movies = await readMoviesFile();
+  const updateMovie = movies.find((movie) => movie.id === Number(id));
+
+  updateMovie.movie = movie;
+  updateMovie.price = price;
+
+  movies[Number(id)-1] = {
+    id: updateMovie.id,
+    movie,
+    price
+  }
+  
+  const moviesRoute = path.resolve(__dirname,'movies.json')
+  await fs.writeFile(moviesRoute,JSON.stringify(movies));
+  return res.status(200).json(updateMovie);
+});
+
 app.get('/movies/search', async (req,res) => {
   try {
     const { q } = req.query;
@@ -55,25 +76,6 @@ app.post('/movies', async (req,res) => {
   return res.status(201).json(allMovies);
 })
 
-app.put('/movies/:id', async (req,res) => {
-  const { id } = req.params;
-  const { movie, price } = req.body;
-  const movies = await readMoviesFile();
-  const updateMovie = movies.find((movie) => movie.id === Number(id));
-
-  updateMovie.movie = movie;
-  updateMovie.price = price;
-
-  movies[Number(id)-1] = {
-    id: updateMovie.id,
-    movie,
-    price
-  }
-  
-  const moviesRoute = path.resolve(__dirname,'movies.json')
-  await fs.writeFile(moviesRoute,JSON.stringify(movies));
-  return res.status(200).json(updateMovie);
-});
 
 app.delete('/movies/:id', async (req, res) => {
   const { id } = req.params;

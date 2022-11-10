@@ -42,12 +42,14 @@ app.get('/chocolates/brand/:brandId', async (req, res) => {
 
 app.put('/chocolates/:id', async (req, res) => {
   const { id } = req.params;
-  const { name, brandId } = req.body;
-  const updatedChocolate = await cacauTrybe.updateChocolate(Number(id), { name, brandId });
+  console.log(id);
+  // const { name, brandId } = req.body;
+  console.log(req.body);
+  // const updatedChocolate = await cacauTrybe.updateChocolate(Number(id), { name, brandId });
 
-  if (updatedChocolate) return res.status(200).json({ chocolate: updatedChocolate });
-  res.status(404).json({ message: 'chocolate not found' });
-})
+  // if (updatedChocolate) return res.status(200).json({ chocolate: updatedChocolate });
+  // res.status(404).json({ message: 'chocolate not found' });
+});
 
 app.listen(3010, () => {
   console.log('Iniciando na porta 3001');
