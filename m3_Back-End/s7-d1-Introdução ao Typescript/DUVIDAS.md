@@ -1,0 +1,1 @@
+1 - O que acontece ao usar o comando npx tsc? E porque o código que estão as funções é mais simples que o que está às resolvendo? 
