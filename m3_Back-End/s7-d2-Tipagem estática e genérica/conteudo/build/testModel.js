@@ -1,5 +1,4 @@
 "use strict";
-// ./models/Book.ts
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -13,17 +12,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const connection_1 = __importDefault(require("./connection"));
-class BookModel {
-    constructor() {
-        this.connection = connection_1.default;
-    }
-    getAll() {
-        return __awaiter(this, void 0, void 0, function* () {
-            const result = yield this.connection.execute('SELECT * FROM books');
-            const [rows] = result;
-            return rows;
-        });
-    }
-}
-exports.default = BookModel;
+const BookModel_1 = __importDefault(require("./database/models/BookModel"));
+const CommentModel_1 = __importDefault(require("./database/models/CommentModel"));
+(() => __awaiter(void 0, void 0, void 0, function* () {
+    // const books = await Books.findAll({ raw: true });
+    // console.table(books);
+    // process.exit(0);
+    const comments = yield CommentModel_1.default.findAll({ raw: true });
+    console.table(comments);
+    const booksWithComments = yield BookModel_1.default.findAll({ raw: true, include: ['comments'] });
+    console.table(booksWithComments);
+}))();

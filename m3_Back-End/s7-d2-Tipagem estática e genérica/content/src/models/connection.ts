@@ -1,8 +1,7 @@
-// ./models/connection.ts
 
-import * as mysql from 'mysql2/promise';
+import mysql from 'mysql2/promise';
 
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 dotenv.config();
 

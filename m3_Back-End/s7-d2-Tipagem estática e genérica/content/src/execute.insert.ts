@@ -1,8 +1,8 @@
-// ./execute.insert.ts
+
 
 import readline from 'readline-sync';
-import { ResultSetHeader } from 'mysql2';
 import connection from './models/connection';
+import { ResultSetHeader } from 'mysql2'
 
 const main = async () => {
   const title = readline.question('Digite o nome do livro: ');

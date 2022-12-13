@@ -1,5 +1,4 @@
 "use strict";
-// ./models/connection.ts
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -24,12 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const mysql = __importStar(require("mysql2/promise"));
-const dotenv = __importStar(require("dotenv"));
-dotenv.config();
-exports.default = mysql.createPool({
-    host: process.env.DB_HOSTNAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-});
+const sequelize_1 = require("sequelize");
+const config = __importStar(require("../config/database"));
+exports.default = new sequelize_1.Sequelize(config);
